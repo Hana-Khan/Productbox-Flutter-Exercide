@@ -1,4 +1,0 @@
-#Mon Nov 22 03:43:04 PKT 2021
-base.0=E\:\\Codes\\ProductBox\\Productbox-Flutter-Exercise\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-path.0=classes.dex
-renamed.0=classes.dex
