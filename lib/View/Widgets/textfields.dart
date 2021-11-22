@@ -14,6 +14,7 @@ class TextFields extends StatelessWidget {
   final int? maxLines;
   final TextInputType? textInputType;
   String? Function(String?)? validator;
+  final bool? obsecureText;
   TextFields({
     Key? key,
     this.controller,
@@ -23,7 +24,8 @@ class TextFields extends StatelessWidget {
     this.suffixIcon,
     this.maxLines,
     this.textInputType,
-    required this.validator,
+    required this.validator, 
+    this.obsecureText,
   }) : super(key: key);
       
 
@@ -40,8 +42,9 @@ class TextFields extends StatelessWidget {
         cursorColor: ColorsConstants.primaryColor,
         style: TextStyle(
           color: ColorsConstants.black,
-          fontSize: 12.sp,
+          fontSize: 14.sp,
         ),
+        obscureText: obsecureText!,
         decoration: InputDecoration(
             filled: true,
             fillColor: Colors.white,

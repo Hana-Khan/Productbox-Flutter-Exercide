@@ -101,6 +101,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             ///Email Address textfield
                             TextFields(
                               hintText: 'Email Address',
+                              obsecureText: false,
                               controller: emailController,
                               validator: (emailValue) {
                                 RegExp emailRegex = RegExp(
@@ -122,6 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             /// Password textfield
                             TextFields(
                                 hintText: 'Password',
+                                obsecureText: true,
                                 controller: passwordController,
                                 validator: (passwordValue) {
                                   if (passwordValue!.isEmpty) {
