@@ -14,11 +14,19 @@ import 'package:productbox_flutter_exercise/View/Widgets/showToast.dart';
 import 'package:productbox_flutter_exercise/View/Widgets/textfields.dart';
 import 'package:productbox_flutter_exercise/View/Widgets/titile.dart';
 
-class LoginScreen extends StatelessWidget{
+class LoginScreen extends StatefulWidget{
   
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailController = TextEditingController();
+
   TextEditingController passwordController = TextEditingController();
+
   late String email, password;
+
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
