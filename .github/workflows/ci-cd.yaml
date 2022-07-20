@@ -1,7 +1,7 @@
 name: CI-CD-ANDROID_APK
 on:
   push:
-    branches: [CI-CD]  
+    branches: [master]  
     
 env:
   flutter_channel: 'stable'
@@ -22,5 +22,15 @@ jobs:
         with:
           channel: 'stable'
           flutter-version: '2.8.1'
+      - run: flutter clean
+      - run: flutter pub get
+      - run: flutter format --set-exit-if-changed .
+      - run: flutter build apk --debug --split-per-abi
+      - uses: ncipollo/release-action@v1
+        with:
+          name: release-apks
+          artifacts: "build/app/outputs/flutter-apk/app-armeabi-v7a-release.apk"
+          tag:  v1.0.${{ github.run_number }}
+          token: ${{ secrets.GIT_TOKEN}}
           
           
